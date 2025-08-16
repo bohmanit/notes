@@ -1,0 +1,218 @@
+/*
+  Svenska Spel – Marp Theme (Design System Aligned)
+  --------------------------------------------------
+  Usage in your deck front matter:
+
+  ---
+  marp: true
+  theme: svenskaspel
+  class: lead with-logo
+  header: ""
+  footer: "© Svenska Spel AB"
+  paginate: true
+  ---
+
+  Place this file next to your .md slides. Update --logo-url to the
+  official "winner" logo asset (SVG/PNG) from the brand portal.
+*/
+
+/* @theme svenskaspel */
+
+:root {
+  /* ===== Brand palette (from Design System) ===== */
+  --brand-red: #FF0000;        /* Primary red */
+  --brand-red-soft: #FFECEB;   /* Soft / tint */
+  --brand-error: #ED0000;      /* Error red */
+  --brand-navy: #001932;       /* Digital text/icon color */
+  --brand-white: #ffffff;
+
+  /* Semantic accents */
+  --info-blue: #256FEA;        /* Information */
+  --focus-green: #008912;      /* Focus / confirmation */
+
+  /* Neutral helpers for layout */
+  --neutral-700: #3b3b3b;
+  --neutral-500: #6b6b6b;
+  --neutral-200: #e7e7e7;
+
+  /* Typography
+     Prefer internal typeface "Svenska Spel Platform" when available;
+     otherwise fall back to Arial per guidance. */
+  --font-sans: "Svenska Spel Platform", Arial, "Helvetica Neue", system-ui,
+               -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+
+  /* Layout */
+  --slide-width: 1280px;
+  --slide-height: 720px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --radius: 16px;
+
+  /* Logo (update path) */
+  --logo-url: url("winner_2.png");
+}
+
+/* Base slide */
+section {
+  font-family: var(--font-sans);
+  color: var(--brand-navy);
+  background: var(--brand-white);
+  width: var(--slide-width);
+  height: var(--slide-height);
+  padding: 92px 96px 84px 96px; /* space for header/footer */
+  box-sizing: border-box;
+  line-height: 1.3;
+}
+
+/* Optional: add logo to top-left when class `with-logo` is present */
+section.with-logo::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  width: 96px;
+  height: 96px;
+  background-image: var(--logo-url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+/* Title slide helper */
+section.lead {
+  display: grid;
+  align-content: center;
+  background: radial-gradient(1200px 600px at 80% -10%, var(--brand-red-soft), transparent 70%) no-repeat, var(--brand-white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 var(--spacing-6);
+}
+
+h1 { font-size: 64px; line-height: 1.05; }
+section.lead h1 { font-size: 76px; }
+
+h2 { font-size: 44px; }
+h3 { font-size: 34px; }
+
+/* Headline accent bar */
+h1::before, h2::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 6px;
+  margin: 0 0 var(--spacing-4);
+  background: var(--brand-red);
+  border-radius: 999px;
+}
+
+p { font-size: 28px; margin: 0 0 var(--spacing-4); color: var(--brand-navy); }
+ul, ol { font-size: 28px; margin: 0 0 var(--spacing-4) 1.2em; }
+li { margin: 0 0 var(--spacing-2); }
+
+strong { color: var(--brand-navy); }
+em { color: var(--neutral-700); }
+
+a { color: var(--brand-red); text-decoration: none; border-bottom: 2px solid var(--brand-red-soft); }
+a:hover { border-bottom-color: var(--brand-red); }
+
+/* Code */
+code, pre code { font-family: var(--font-mono); font-size: 0.9em; }
+pre {
+  background: #0d0d0d;
+  color: #e9e9e9;
+  padding: var(--spacing-4) var(--spacing-6);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 8px solid var(--brand-red);
+  padding: var(--spacing-2) var(--spacing-6);
+  color: var(--brand-navy);
+  font-size: 30px;
+}
+
+/* Tables */
+section table { border-collapse: separate; border-spacing: 0; font-size: 24px; width: 100%; }
+section th, section td { padding: 12px 16px; }
+section thead th {
+  background: var(--brand-red);
+  color: var(--brand-white);
+  text-align: left;
+}
+section tbody tr:nth-child(odd) td { background: #fafafa; }
+section tbody tr:nth-child(even) td { background: #f5f5f5; }
+section tbody td { border-bottom: 1px solid var(--neutral-200); }
+
+/* Callouts */
+.callout { border-left: 6px solid var(--brand-red); background: var(--brand-red-soft); padding: var(--spacing-4) var(--spacing-6); border-radius: var(--radius); }
+.success { border-color: var(--focus-green); }
+.info { border-left: 6px solid var(--info-blue); background: color-mix(in srgb, var(--info-blue) 10%, #fff); }
+
+/* Badges / chips */
+.badge { display: inline-block; font-size: 18px; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--neutral-200); }
+.badge--brand { background: var(--brand-red); color: var(--brand-white); border-color: var(--brand-red); }
+
+/* Two-column helper */
+.columns { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+
+/* Inverse (brand) slide */
+section.inverse { background: var(--brand-red); color: var(--brand-white); }
+section.inverse h1::before, section.inverse h2::before { background: var(--brand-white); }
+section.inverse p, section.inverse li, section.inverse blockquote { color: #ffffffcc; }
+section.inverse a { color: var(--brand-white); border-bottom-color: #ffffff66; }
+
+/* Footer & pagination */
+section::footnote { color: var(--neutral-500); }
+
+/***** Marp built-ins tweaks *****/
+section > header, section > footer { color: var(--neutral-500); font-size: 18px; }
+section > footer { position: absolute; left: 96px; right: 96px; bottom: 28px; display: flex; justify-content: space-between; align-items: center; }
+
+/***** Utilities *****/
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.center { text-align: center; }
+.right { text-align: right; }
+.rounded { border-radius: var(--radius); }
+.shadow { box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+
+/* Image framing aligned with brand */
+img.framed { padding: 8px; background: #fff; border: 2px solid var(--brand-red-soft); border-radius: 12px; }
+
+/* Divider */
+.hr { height: 4px; width: 100%; background: linear-gradient(90deg, var(--brand-red), transparent); border-radius: 999px; margin: var(--spacing-6) 0; }
+
+/* Title card component */
+.title-card { background: var(--brand-red); color: var(--brand-white); padding: 28px; border-radius: 20px; }
+.title-card small { display: block; opacity: .9; margin-top: 6px; }
+
+/* KPI card */
+.kpi { display: inline-block; padding: 14px 18px; border-radius: 16px; background: var(--brand-red-soft); border: 1px solid var(--neutral-200); }
+.kpi__value { font-size: 52px; font-weight: 800; color: var(--brand-red); }
+.kpi__label { font-size: 18px; color: var(--neutral-700); }
+
+/* Custom pagination styling - move to right side and show total pages */
+section::after {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: var(--brand-red);
+  color: var(--brand-white);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(237, 0, 0, 0.3);
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+}

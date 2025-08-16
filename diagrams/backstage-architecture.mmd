@@ -1,0 +1,86 @@
+graph TB
+    %% Developer Layer
+    subgraph "Developer Experience"
+        DEV[👨‍💻 Developers]
+        IDE[🔧 VS Code/IDEs]
+        CLI[⌨️ CLI Tools]
+    end
+
+    %% Backstage IDP Layer
+    subgraph "Internal Developer Platform (Backstage)"
+        CATALOG[📚 Service Catalog]
+        TEMPLATES[📋 Software Templates]
+        DOCS[📖 TechDocs]
+        PLUGINS[🔌 Plugins]
+        API[🔗 Backstage API]
+    end
+
+    %% Platform Services Layer
+    subgraph "Platform Services"
+        GIT[📂 Git Repositories<br/>GitHub/GitLab]
+        CI[🔄 CI/CD<br/>Jenkins/GitHub Actions]
+        REG[📦 Container Registry<br/>Docker Hub/GCR]
+        SEC[🔒 Security<br/>Vault/SIEM]
+    end
+
+    %% Kubernetes Platform Layer
+    subgraph "Kubernetes Platform"
+        K8S[☸️ Kubernetes Clusters]
+        HELM[📊 Helm Charts]
+        INGRESS[🌐 Ingress Controllers]
+        MONITOR[📈 Monitoring<br/>Prometheus/Grafana]
+    end
+
+    %% Infrastructure Layer
+    subgraph "Cloud Infrastructure (GCP)"
+        COMPUTE[💻 Compute Engine]
+        STORAGE[💾 Cloud Storage]
+        DB[🗄️ Cloud SQL]
+        NETWORK[🌐 VPC/Networking]
+        IAM[🔐 Identity & Access]
+    end
+
+    %% Infrastructure as Code
+    subgraph "Infrastructure as Code"
+        TERRAFORM[🏗️ Terraform]
+        ANSIBLE[⚙️ Ansible]
+    end
+
+    %% Connections
+    DEV --> CATALOG
+    DEV --> TEMPLATES
+    DEV --> DOCS
+    IDE --> API
+    CLI --> API
+
+    CATALOG --> GIT
+    TEMPLATES --> CI
+    PLUGINS --> REG
+    PLUGINS --> SEC
+    API --> MONITOR
+
+    CI --> K8S
+    REG --> K8S
+    HELM --> K8S
+    K8S --> MONITOR
+
+    TERRAFORM --> COMPUTE
+    TERRAFORM --> STORAGE
+    TERRAFORM --> DB
+    TERRAFORM --> NETWORK
+    TERRAFORM --> IAM
+
+    K8S --> COMPUTE
+    DB --> STORAGE
+    MONITOR --> NETWORK
+
+    %% Styling
+    classDef backstage fill:#1f5582,stroke:#fff,stroke-width:2px,color:#fff
+    classDef platform fill:#326ce5,stroke:#fff,stroke-width:2px,color:#fff
+    classDef infra fill:#4285f4,stroke:#fff,stroke-width:2px,color:#fff
+    classDef dev fill:#28a745,stroke:#fff,stroke-width:2px,color:#fff
+
+    class CATALOG,TEMPLATES,DOCS,PLUGINS,API backstage
+    class GIT,CI,REG,SEC,K8S,HELM,INGRESS,MONITOR platform
+    class COMPUTE,STORAGE,DB,NETWORK,IAM,TERRAFORM,ANSIBLE infra
+    class DEV,IDE,CLI dev

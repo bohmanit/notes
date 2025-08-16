@@ -1,0 +1,8 @@
+{
+  "markdown.marp.enable": true,
+  "markdown.marp.themes": [
+    "./themes/my-theme.css"
+  ],
+  "markdown.marp.previewTheme": "my-theme",
+  "drawio.defaultDrawioFileType": "svg"
+}
