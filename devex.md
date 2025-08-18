@@ -63,7 +63,7 @@ Vision:
 
 # ☁️ How does it relate to other things
 
-<img src="diagrams/devex_vs_infra_slide.svg" width="90%" style="display: block; margin: 0 auto;" />
+<img src="diagrams/devex_vs_infra_clean.svg" height="70%" style="display: block; margin: 0 auto;" />
 
 ---
 # Modern vs Traditional DevEX Metrics
