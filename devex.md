@@ -4,22 +4,14 @@ paginate: true
 style: |
   @import 'themes/svenskaspel_techy.css';
   section {
-   # � Summary
-
-## Our DevEx Mission
-- **Reduce cognitive load** → Let developers focus on business value, not infrastructure
-- **Enable self-service** → Automation, golden paths, and intuitive developer portals
-- **Continuously improve** → Measure developer satisfaction and productivity
-
-## What We're Building
-- **Application Layer** → Software catalog, templates, workflows, and developer tools
-- **Platform Layer** → Backstage, CI/CD, artifact management, and access control
-- **Infrastructure Foundation** → Networking, data services, and reliable compute resources
-
-## Success Metrics
-- Developer velocity and satisfaction scores
-- Onboarding time reduction
-- Self-service adoption ratesst in DevEx?padding-bottom: 40px;
+    padding-bottom: 40px;
+  }
+  .slide-image {
+    max-height: 450px;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
   }
 ---
 
@@ -64,31 +56,26 @@ Vision:
   - Time-to-first-PR, onboarding speed, developer satisfaction  
 ---
 
-# ☁️ Where does it fit it
-<div style="text-align: center;">
-<img src="diagrams/devex_hamburger.svg" width="80%" />
-</div>
+# ☁️ How does it relate
 
----
-
-# ☁️ How does it relate to other thingd
-
-<div style="text-align: center;">
-<img src="diagrams/devex_vs_infra_slide.svg" width="80%" />
-</div>
+<img src="diagrams/devex_vs_infra_slide.svg" class="slide-image" alt="DevEx vs Infrastructure Relationship" />
 
 ---
 
 # ☁️ How does it relate to other things
 
-<div style="text-align: center;">
-<img src="diagrams/devex_vs_infra_clean.svg" width="80%" />
-</div>
+<img src="diagrams/devex_vs_infra_clean.svg" class="slide-image" alt="DevEx vs Infrastructure Clean View" />
+
+---
+
+# ☁️ What does it mean
+
+<img src="diagrams/devex_hamburger.svg" class="slide-image" alt="DevEx Architecture Layers" />
 
 ---
 # Modern vs Traditional DevEX Metrics
 
-| <span style="color: white;">**Traditional Metrics**</span> | <span style="color: white;">**Modern DevEx Metrics**</span> |
+| <span style="color: #FF9800;">**Traditional Metrics**</span> | <span style="color: #4CAF50;">**Modern DevEx Metrics**</span> |
 |------------------------|---------------------------|
 | Lines of code | Time to first PR |
 | Deployment frequency | Developer satisfaction scores |
@@ -109,19 +96,14 @@ Vision:
 - In our case, *built using Backstage*
 ---
 
-# � Why Invest in DevEx?
+# 📝 Summary
 
-## Business Impact & ROI
-- **10-20% increase in developer velocity** → faster time-to-market
-- **50% reduction in onboarding time** → immediate productivity gains  
-- **Reduced developer turnover** → lower hiring & training costs
-- **Higher developer satisfaction** → better retention & recruitment
-
-## Competitive Advantage
-- **Ship features faster** than competitors
-- **Attract top talent** with modern developer tools
-- **Scale engineering teams** efficiently without linear cost increases
-- **Reduce technical debt** through standardized practices
+## What is Developer Experience?
+- **Developer productivity** through better tools & processes
+- **Self-service platforms** - reduce waiting & dependencies
+- **Cognitive load reduction** - focus on code, not infrastructure  
+- **Fast feedback loops** - instant insights & error detection
+- **Golden path** - opinionated defaults that just work
 
 
 ---
