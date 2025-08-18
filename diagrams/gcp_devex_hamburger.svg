@@ -9,8 +9,8 @@
   
   <!-- Layer 2: Services -->
   <rect x="70" y="140" width="460" height="60" rx="25" fill="#e3f2fd" stroke="#256FEA" stroke-width="3"/>
-  <text x="300" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#001932">SERVICES</text>
-  <text x="300" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#001932">Cloud Functions</text>
+  <text x="300" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#001932">APPLICATION LAYER</text>
+  <text x="300" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#001932">Components, Microservices, Systems, APIs, Templates, Workflows</text>
   
   <!-- Layer 3: Platform -->
   <rect x="90" y="220" width="420" height="60" rx="20" fill="#f3e5f5" stroke="#9C27B0" stroke-width="3"/>
