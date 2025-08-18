@@ -1,23 +1,52 @@
 ---
 marp: true
 paginate: true
-class: with-logo
 style: |
-  @import 'themes/svenskaspel.css';
+  @import 'themes/svenskaspel_techy.css';
 ---
 
-<!-- _class: lead with-logo -->
+<!-- _class: lead -->
 
-Whazzup!
+# 🎯 Positioning: Modern DevEx
+
+> DevEx is **not about building infrastructure or platforms for their own sake** —  
+> it’s about **reducing cognitive load**,  
+> **enabling self-service**, and  
+> **boosting productivity & happiness**.
+
+<!--
+Vision:
+
+  - Emphasize this is a **vision statement**, not just a definition.  
+  - Call out that infra/platform can exist, but they are only **means to an end**.
+-->
 
 ---
 
-# What is Developer Experience
+# 🚀 Modern DevEx — What
 
-Modern DevEx focuses on reducing cognitive load and maximizing developer productivity by providing intuitive, automated, and self-service capabilities that let developers focus on writing code rather than fighting infrastructure.
+- 🧠 **Reduce cognitive load** → maximize developer productivity  
+- ⚡ **Enable intuitive, automated, self-service capabilities**  
+- 😀 **Let developers focus on code, not infrastructure** 
 
 ---
-# 🎯 What an IDP Is
+# ⚙️ Modern DevEx — How
+
+- 🧩 **Make systems understandable**  
+  - Clear abstractions & discoverability  
+  - Golden paths that guide the “right way”  
+  - Visual system maps & ownership clarity  
+
+- ⚡ **Empower self-service**  
+  - Developer portals as a single hub  
+  - Automation of scaffolding, deployments, environments  
+  - Fast feedback loops for instant learning  
+
+- 📊 **Continuously measure & improve**  
+  - Time-to-first-PR, onboarding speed, developer satisfaction  
+---
+
+# 🎯 IDP: What is it
 
 - **A centralized hub for all developer tools**, services, ~~documentation~~, and processes related to building and running software.
 - *Designed to improve developer experience* by abstracting away complexity and making self-service possible.
@@ -25,12 +54,13 @@ Modern DevEx focuses on reducing cognitive load and maximizing developer product
 
 ---
 
+
 # ☁️ How does it relate to other things
 
 <img src="diagrams/devex_vs_infra_slide.svg" width="90%" style="display: block; margin: 0 auto;" />
 
 ---
-# Modern DevEx Metrics vs Traditional Metrics
+# Modern vs Traditional DevEX Metrics
 
 | <span style="color: white;">**Traditional Metrics**</span> | <span style="color: white;">**Modern DevEx Metrics**</span> |
 |------------------------|---------------------------|

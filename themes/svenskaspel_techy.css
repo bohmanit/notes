@@ -1,0 +1,284 @@
+/*
+  Svenska Spel – Techy Marp Theme
+  -------------------------------
+  Technical/developer-focused variant with animated backgrounds
+*/
+
+/* @theme svenskaspel_techy */
+
+:root {
+  /* ===== Brand palette (from Design System) ===== */
+  --brand-red: #FF0000;        /* Primary red */
+  --brand-red-soft: #FFECEB;   /* Soft / tint */
+  --brand-error: #ED0000;      /* Error red */
+  --brand-navy: #001932;       /* Digital text/icon color */
+  --brand-white: #ffffff;
+
+  /* Semantic accents */
+  --info-blue: #256FEA;        /* Information */
+  --focus-green: #008912;      /* Focus / confirmation */
+
+  /* Neutral helpers for layout */
+  --neutral-700: #3b3b3b;
+  --neutral-500: #6b6b6b;
+  --neutral-200: #e7e7e7;
+
+  /* Typography */
+  --font-sans: "Svenska Spel Platform", Arial, "Helvetica Neue", system-ui,
+               -apple-system, Segoe UI, Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+
+  /* Layout */
+  --slide-width: 1280px;
+  --slide-height: 720px;
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --radius: 8px;
+
+  /* Logo (update path) */
+  --logo-url: url("winner_2.png");
+}
+
+/* Base styling with techy background effects */
+section {
+  font-family: var(--font-sans);
+  color: var(--brand-navy);
+  background: var(--brand-white);
+  font-size: 32px;
+  padding: var(--spacing-12);
+  width: var(--slide-width);
+  height: var(--slide-height);
+  line-height: 1.3;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Base styling with subtle hexagonal techy effects */
+section {
+  font-family: var(--font-sans);
+  color: var(--brand-navy);
+  background: 
+    /* Hexagonal pattern using repeating gradients */
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 48px,
+      rgba(37,111,234,0.015) 50px,
+      rgba(37,111,234,0.015) 52px,
+      transparent 54px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      transparent,
+      transparent 48px,
+      rgba(37,111,234,0.015) 50px,
+      rgba(37,111,234,0.015) 52px,
+      transparent 54px
+    ),
+    repeating-linear-gradient(
+      120deg,
+      transparent,
+      transparent 48px,
+      rgba(37,111,234,0.015) 50px,
+      rgba(37,111,234,0.015) 52px,
+      transparent 54px
+    ),
+    /* Subtle radial glows */
+    radial-gradient(circle at 75% 25%, rgba(37,111,234,0.03) 0%, transparent 60%),
+    radial-gradient(circle at 25% 75%, rgba(37,111,234,0.02) 0%, transparent 50%),
+    #fafafa;
+  background-size: auto, auto, auto, 1200px 1200px, 900px 900px, auto;
+  font-size: 32px;
+  padding: var(--spacing-12);
+  width: var(--slide-width);
+  height: var(--slide-height);
+  line-height: 1.3;
+  position: relative;
+  overflow: hidden;
+  animation: subtleHexMove 45s ease-in-out infinite alternate;
+}
+
+/* Subtle hexagonal background animation */
+@keyframes subtleHexMove {
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px, 75% 25%, 25% 75%, 0 0;
+  }
+  25% {
+    background-position: 10px 10px, -5px 15px, 5px -10px, 80% 20%, 20% 80%, 0 0;
+  }
+  50% {
+    background-position: -8px 12px, 12px -8px, -10px 5px, 70% 30%, 30% 70%, 0 0;
+  }
+  75% {
+    background-position: 15px -5px, -10px 10px, 8px 12px, 85% 15%, 15% 85%, 0 0;
+  }
+  100% {
+    background-position: -3px -8px, 8px 3px, -5px -15px, 78% 28%, 28% 78%, 0 0;
+  }
+}
+
+/* Keep content above background effects */
+section > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo positioning - top-right corner on ALL slides by default */
+section::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  width: 96px;
+  height: 96px;
+  background: var(--logo-url) no-repeat center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/* Title slide helper */
+section.lead {
+  display: grid;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--brand-navy);
+  font-weight: 700;
+  margin: var(--spacing-4) 0;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.25rem; }
+h3 { font-size: 1.875rem; }
+
+/* === Enhanced dark technical background for inverse slides === */
+section.inverse {
+  background: var(--brand-navy);
+  color: var(--brand-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* More prominent grid overlay for dark slides */
+section.inverse::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Dramatic animated glow for dark slides */
+section.inverse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(135deg, rgba(237,0,0,0.08) 1px, transparent 1px),
+    linear-gradient(225deg, rgba(237,0,0,0.08) 1px, transparent 1px),
+    radial-gradient(800px 400px at 70% -10%, rgba(237,0,0,0.3), transparent 70%);
+  background-size: 28px 28px, 28px 28px, auto;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 0;
+  
+  /* More dramatic animation for dark slides */
+  animation: dramaticGlow 18s ease-in-out infinite alternate;
+}
+
+/* Dramatic glowing animation for inverse slides */
+@keyframes dramaticGlow {
+  0% {
+    background-position: 0px 0px, 0px 0px, 70% -10%;
+    opacity: 0.9;
+  }
+  50% {
+    background-position: 20px 20px, -20px -20px, 65% -5%;
+    opacity: 1;
+  }
+  100% {
+    background-position: -10px -10px, 10px 10px, 75% -15%;
+    opacity: 0.85;
+  }
+}
+
+/* Keep content above background */
+section.inverse > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Text tweaks for readability */
+section.inverse p,
+section.inverse li,
+section.inverse blockquote {
+  color: #ffffffcc;
+}
+section.inverse a {
+  color: var(--brand-red);
+  border-bottom-color: rgba(237,0,0,0.5);
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: var(--spacing-4) 0;
+}
+
+th, td {
+  padding: var(--spacing-3) var(--spacing-4);
+  text-align: left;
+  border-bottom: 1px solid var(--neutral-200);
+}
+
+th {
+  background-color: var(--brand-navy);
+  color: var(--brand-white);
+  font-weight: 600;
+}
+
+/* Footer content - positioned to avoid page numbers */
+section > footer {
+  position: absolute;
+  left: 30px;
+  right: 120px; /* Leave space for page numbers */
+  bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 16px;
+  color: var(--neutral-500);
+}
+
+/* Page number styling - bottom right corner */
+section::after {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  background: var(--brand-red);
+  color: var(--brand-white);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+}
