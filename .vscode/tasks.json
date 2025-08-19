@@ -7,6 +7,12 @@
 			"command": "npx @marp-team/marp-cli devex.md --html --output devex.html && open -a 'Google Chrome' devex.html",
 			"problemMatcher": [],
 			"group": "build"
+		},
+		{
+			"label": "Export and Open CI/CD Presentation",
+			"type": "shell",
+			"command": "npx @marp-team/marp-cli cicd.md --html --output cicd.html && open -a 'Google Chrome' cicd.html",
+			"group": "build"
 		}
 	]
 }
