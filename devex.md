@@ -3,16 +3,7 @@ marp: true
 paginate: true
 style: |
   @import 'themes/svenskaspel_techy.css';
-  section {
-    padding-bottom: 40px;
-  }
-  .slide-image {
-    max-height: 450px;
-    max-width: 90%;
-    display: block;
-    margin: 0 auto;
-    object-fit: contain;
-  }
+
 ---
 
 <!-- _class: lead -->
@@ -32,19 +23,24 @@ Vision:
 -->
 
 ---
+<div class="slide-header">🚀 Modern DevEx — What</div>
 
-# 🚀 Modern DevEx — What
+<div class="content-area">
 
 - 🧠 **Reduce cognitive load** → maximize developer productivity  
 - ⚡ **Enable intuitive, automated, self-service capabilities**  
 - 😀 **Let developers focus on code, not infrastructure** 
 
+</div>
+
 ---
-# ⚙️ Modern DevEx — How
+<div class="slide-header">⚙️ Modern DevEx — How</div>
+
+<div class="content-area">
 
 - 🧩 **Make systems understandable**  
   - Clear abstractions & discoverability  
-  - Golden paths that guide the “right way”  
+  - Golden paths that guide the "right way"  
   - Visual system maps & ownership clarity  
 
 - ⚡ **Empower self-service**  
@@ -54,26 +50,60 @@ Vision:
 
 - 📊 **Continuously measure & improve**  
   - Time-to-first-PR, onboarding speed, developer satisfaction  
+
+</div>  
+
 ---
 
-# ☁️ How does it relate
+<div class="slide-header">☁️ How does it connect</div>
+
+<div class="content-area">
 
 <img src="diagrams/devex_vs_infra_slide.svg" class="slide-image" alt="DevEx vs Infrastructure Relationship" />
 
----
-
-# ☁️ How does it relate to other things
-
-<img src="diagrams/devex_vs_infra_clean.svg" class="slide-image" alt="DevEx vs Infrastructure Clean View" />
+</div>
 
 ---
 
-# ☁️ What does it mean
+<div class="slide-header">☁️ How does it relate to other things</div>
+
+<div class="content-area">
+
+<div style="display: flex; align-items: flex-start; gap: 2rem; height: 500px; width: 100%;">
+  <div style="flex: 0 0 45%; display: flex; align-items: center; justify-content: center; height: 100%;">
+    <img src="diagrams/devex_vs_infra_clean.svg" alt="DevEx vs Infrastructure Clean View" style="width: 100%; height: auto; max-height: 480px; object-fit: contain;" />
+  </div>
+  <div style="flex: 1; padding: 1rem; height: 100%; overflow: hidden;">
+
+## DevEx Relationships
+
+<ul>
+<li><strong>DevEx</strong> provides developer-friendly abstractions over infrastructure</li>
+<li><strong>Platform Engineering</strong> enables DevEx through reliable foundations</li>
+<li><strong>Tools & Automation</strong> bridge infrastructure and developer needs</li>
+<li><strong>Self-Service</strong> emerges from this layered approach</li>
+</ul>
+
+  </div>
+</div>
+
+</div>
+
+---
+
+<div class="slide-header">☁️ What does it mean</div>
+
+<div class="content-area">
 
 <img src="diagrams/devex_hamburger.svg" class="slide-image" alt="DevEx Architecture Layers" />
 
+</div>
+
 ---
-# Modern vs Traditional DevEX Metrics
+
+<div class="slide-header">Modern vs Traditional DevEX Metrics</div>
+
+<div class="content-area">
 
 | <span style="color: #FF9800;">**Traditional Metrics**</span> | <span style="color: #4CAF50;">**Modern DevEx Metrics**</span> |
 |------------------------|---------------------------|
@@ -86,30 +116,58 @@ Vision:
 
 **Modern DevEx = Developer-Centric Measurements + Business Impact**
 
+</div>
+
 ---
 
+<div class="slide-header">🎯 IDP: What is it</div>
 
-# 🎯 IDP: What is it
+<div class="content-area">
 
 - **A centralized hub for all developer tools**, services, ~~documentation~~, and processes related to building and running software.
 - *Designed to improve developer experience* by abstracting away complexity and making self-service possible.
 - In our case, *built using Backstage*
+
+</div>
+
 ---
 
-# 📝 Summary
+<div class="slide-header">📝 Summary</div>
+
+<div class="content-area">
 
 ## What is Developer Experience?
-- **Developer productivity** through better tools & processes
-- **Self-service platforms** - reduce waiting & dependencies
-- **Cognitive load reduction** - focus on code, not infrastructure  
-- **Fast feedback loops** - instant insights & error detection
-- **Golden path** - opinionated defaults that just work
 
+<ul>
+<li><strong>Developer productivity</strong> through better tools & processes</li>
+<li><strong>Self-service platforms</strong> - reduce waiting & dependencies</li>
+<li><strong>Cognitive load reduction</strong> - focus on code, not infrastructure</li>
+<li><strong>Fast feedback loops</strong> - instant insights & error detection</li>
+<li><strong>Golden path</strong> - opinionated defaults that just work</li>
+<li><strong>Accelerated time to market</strong> - faster feature delivery & deployment</li>
+</ul>
+
+</div>
 
 ---
+<div class="slide-header">🎯 Modern DevEx — Why</div>
 
+<div class="content-area">
+
+## Our Objectives
+
+- 🚀 **Focus on our core business** — developing game experiences  
+
+- ⚡ **Become faster and more effective** by building less ourselves and increasing use of ready-made standardized services and automation  
+
+- 💖 **Continue to be an attractive employer**  
+
+</div>  
+
+---
 <!-- _class: invert -->
-
+<div class="slide-header">
 # ❓ Questions?
+</div>
 
 Let’s discuss!

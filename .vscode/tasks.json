@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Export and Open Presentation",
+			"type": "shell",
+			"command": "npx @marp-team/marp-cli devex.md --html --output devex.html && open -a 'Google Chrome' devex.html",
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}

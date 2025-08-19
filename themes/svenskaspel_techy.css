@@ -61,11 +61,83 @@ section {
   overflow: hidden;
 }
 
-/* Base styling with simple background */
+/* Base styling with subtle beehive/honeycomb hexagonal pattern */
 section {
   font-family: var(--font-sans);
   color: var(--brand-navy);
-  background: #fafafa;
+  background: 
+    /* Hexagonal beehive pattern with proper geometry */
+    repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 29px,
+      rgba(80,80,80,0.02) 30px,
+      rgba(120,90,150,0.025) 31px,
+      rgba(80,80,80,0.02) 32px,
+      transparent 33px,
+      transparent 62px
+    ),
+    repeating-linear-gradient(
+      60deg,
+      transparent 0px,
+      transparent 29px,
+      rgba(70,70,70,0.015) 30px,
+      rgba(110,80,140,0.02) 31px,
+      rgba(70,70,70,0.015) 32px,
+      transparent 33px,
+      transparent 62px
+    ),
+    repeating-linear-gradient(
+      120deg,
+      transparent 0px,
+      transparent 29px,
+      rgba(60,60,60,0.01) 30px,
+      rgba(100,70,130,0.015) 31px,
+      rgba(60,60,60,0.01) 32px,
+      transparent 33px,
+      transparent 62px
+    ),
+    /* Hexagonal cell fills for beehive effect */
+    radial-gradient(ellipse 18px 31px at 50% 50%, 
+      rgba(40,40,40,0.008) 0%, 
+      rgba(90,60,120,0.012) 40%, 
+      transparent 70%),
+    radial-gradient(ellipse 16px 28px at 25% 25%, 
+      rgba(50,50,50,0.006) 0%, 
+      rgba(80,50,110,0.01) 35%, 
+      transparent 65%),
+    radial-gradient(ellipse 20px 35px at 75% 75%, 
+      rgba(35,35,35,0.005) 0%, 
+      rgba(70,40,100,0.008) 30%, 
+      transparent 60%),
+    /* Subtle honeycomb texture */
+    radial-gradient(circle 25px at 33% 33%, 
+      rgba(90,70,130,0.004) 0%, 
+      transparent 50%),
+    radial-gradient(circle 30px at 67% 67%, 
+      rgba(80,60,120,0.003) 0%, 
+      transparent 55%),
+    #f9f9fa;
+  background-size: 
+    36px 62px,
+    36px 62px,
+    36px 62px,
+    36px 62px,
+    36px 62px,
+    36px 62px,
+    72px 124px,
+    90px 156px,
+    auto;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    18px 31px,
+    0 0,
+    18px 31px,
+    0 0,
+    0 0,
+    0 0;
   font-size: 32px;
   padding: var(--spacing-12);
   width: var(--slide-width);
@@ -81,6 +153,99 @@ section > * {
   z-index: 1;
 }
 
+/* Content area spacing */
+.content-area {
+  margin-top: calc(var(--spacing-8) + 60px + var(--spacing-6));
+  margin-left: var(--spacing-8);
+  margin-right: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+}
+
+/* Consistent spacing for slides without content-area wrapper */
+section > *:not(.slide-header):not(.content-area):first-of-type {
+  margin-top: 120px;
+}
+
+/* Special handling for lead slides - keep centered */
+section.lead .slide-header {
+  position: static;
+  text-align: center;
+  height: auto;
+  font-size: 3rem;
+}
+
+section.lead .content-area {
+  margin-top: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+}
+
+/* Custom bullet points with futuristic styling */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: var(--spacing-4) 0;
+}
+
+ul li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: var(--spacing-3);
+  line-height: 1.4;
+}
+
+ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #256FEA, #4CAF50);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 8px rgba(37, 111, 234, 0.6),
+    0 0 16px rgba(37, 111, 234, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+/* Nested list styling */
+ul ul li::before {
+  width: 6px;
+  height: 6px;
+  top: 0.7rem;
+  background: linear-gradient(135deg, #4CAF50, #FF9800);
+  box-shadow: 
+    0 0 6px rgba(76, 175, 80, 0.5),
+    0 0 12px rgba(76, 175, 80, 0.2);
+}
+
+/* Subtle pulsing animation for bullet points */
+@keyframes subtlePulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Special styling for emoji bullets (preserve existing) */
+ul li:has(strong:first-child) {
+  padding-left: 0;
+}
+
+ul li:has(strong:first-child)::before {
+  display: none;
+}
+
 /* Logo positioning - top-right corner on ALL slides by default */
 section::before {
   content: "";
@@ -94,10 +259,7 @@ section::before {
   z-index: 1000;
 }
 
-/* Minimal static background - no animations */
-section::after {
-  display: none;
-}
+/* No additional overlay needed - using CSS grid background */
 
 /* Title slide helper */
 section.lead {
@@ -107,11 +269,70 @@ section.lead {
   justify-content: center;
 }
 
-/* Headings */
+/* Headings with subtle futuristic blue glow effect */
 h1, h2, h3, h4, h5, h6 {
   color: var(--brand-navy);
   font-weight: 700;
   margin: var(--spacing-4) 0;
+  text-shadow: 
+    0 0 4px rgba(37, 111, 234, 0.25),
+    0 0 8px rgba(37, 111, 234, 0.15),
+    0 0 16px rgba(37, 111, 234, 0.1),
+    0 0 24px rgba(37, 111, 234, 0.06),
+    0 0 40px rgba(37, 111, 234, 0.03);
+  filter: 
+    drop-shadow(0 0 3px rgba(37, 111, 234, 0.15));
+}
+
+/* Slide-specific styling overrides */
+section {
+  padding-bottom: 40px;
+}
+
+.slide-image {
+  max-height: 450px;
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Top-left header container - most specific selectors for Marp */
+div#\:\$p > svg > foreignObject > section div.slide-header,
+div#\:\$p > svg > foreignObject > section .slide-header,
+section div.slide-header,
+section .slide-header,
+div.slide-header,
+.slide-header {
+  position: fixed !important;
+  top: 2rem !important;
+  left: 2rem !important;
+  z-index: 9999 !important;
+  color: var(--brand-navy) !important;
+  font-weight: 700 !important;
+  font-size: 3rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  text-shadow: 
+    0 0 4px rgba(37, 111, 234, 0.25),
+    0 0 8px rgba(37, 111, 234, 0.15),
+    0 0 16px rgba(37, 111, 234, 0.1),
+    0 0 24px rgba(37, 111, 234, 0.06),
+    0 0 40px rgba(37, 111, 234, 0.03);
+  filter: 
+    drop-shadow(0 0 3px rgba(37, 111, 234, 0.15));
+  line-height: 1.2 !important;
+  height: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  transform: none !important;
+  font-family: var(--font-sans) !important;
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: none !important;
 }
 
 h1 { font-size: 3rem; }
@@ -236,4 +457,76 @@ section::after {
   z-index: 1001;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   content: attr(data-marpit-pagination) " / " attr(data-marpit-pagination-total);
+}
+
+/* Split layout for image + content slides */
+.split-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-6);
+  height: auto;
+  margin: var(--spacing-4) 0;
+  max-height: calc(100vh - 200px);
+}
+
+.split-layout .image-side {
+  flex: 0 0 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-layout .content-side {
+  flex: 1;
+  padding-left: var(--spacing-2);
+  overflow: hidden;
+}
+
+.split-layout img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Ensure headers in split layout maintain glow and proper sizing */
+.split-layout h1,
+.split-layout h2,
+.split-layout h3 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-3);
+  font-size: 1.5rem;
+}
+
+.split-layout ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.split-layout li {
+  margin-bottom: var(--spacing-2);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Responsive image sizing for general use */
+.slide-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Padding for left background images in column layout */
+section[data-marpit-advanced-background="background"] {
+  background-position: left top;
+  background-size: 50% auto;
+  padding-top: 60px;
+}
+
+/* Alternative approach for bg left images */
+section:has([data-marpit-background-image]) .marpit-background-image {
+  padding-top: 60px;
 }
