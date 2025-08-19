@@ -13,6 +13,12 @@
 			"type": "shell",
 			"command": "npx @marp-team/marp-cli cicd.md --html --output cicd.html && open -a 'Google Chrome' cicd.html",
 			"group": "build"
+		},
+		{
+			"label": "Export and Open Promotions Presentation",
+			"type": "shell",
+			"command": "npx @marp-team/marp-cli promotions.md --html --output promotions.html && open -a 'Google Chrome' promotions.html",
+			"group": "build"
 		}
 	]
 }

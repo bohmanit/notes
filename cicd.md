@@ -6,6 +6,11 @@ style: |
 
 ---
 
+<div class="content-area">
+
+*Ready to discuss how DevEx can transform your CI/CD workflows?*
+
+</div>
 <!-- _class: lead -->
 
 # 🎯 Modern CI/CD: Developer Experience Focus
@@ -79,7 +84,7 @@ style: |
 ---
 
 <!-- _class: invert -->
-<div class="slide-header">
+<div class="slide-header-light">
 # ❓ Questions?
 </div>
 

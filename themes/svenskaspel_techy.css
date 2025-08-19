@@ -335,6 +335,114 @@ div.slide-header,
   clear: none !important;
 }
 
+/* Dark background header variant for invert/dark slides */
+section.invert .slide-header-dark,
+section.inverse .slide-header-dark,
+.slide-header-dark {
+  position: fixed !important;
+  top: 2rem !important;
+  left: 2rem !important;
+  z-index: 9999 !important;
+  color: var(--brand-white) !important;
+  font-weight: 700 !important;
+  font-size: 3rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.3),
+    0 0 8px rgba(255, 255, 255, 0.2),
+    0 0 16px rgba(255, 255, 255, 0.15),
+    0 0 24px rgba(255, 255, 255, 0.1),
+    0 0 40px rgba(255, 255, 255, 0.05);
+  filter: 
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.2));
+  line-height: 1.2 !important;
+  height: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  transform: none !important;
+  font-family: var(--font-sans) !important;
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: none !important;
+}
+
+/* Light header variant for inverted slides - white text with glow */
+section.invert .slide-header-light,
+section.inverse .slide-header-light,
+.slide-header-light {
+  position: fixed !important;
+  top: 2rem !important;
+  left: 2rem !important;
+  z-index: 9999 !important;
+  color: var(--brand-white) !important;
+  font-weight: 700 !important;
+  font-size: 3rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  text-shadow: 
+    0 0 6px rgba(255, 255, 255, 0.4),
+    0 0 12px rgba(255, 255, 255, 0.3),
+    0 0 20px rgba(255, 255, 255, 0.2),
+    0 0 32px rgba(255, 255, 255, 0.15),
+    0 0 48px rgba(255, 255, 255, 0.1);
+  filter: 
+    drop-shadow(0 0 4px rgba(255, 255, 255, 0.25));
+  line-height: 1.2 !important;
+  height: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  transform: none !important;
+  font-family: var(--font-sans) !important;
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: none !important;
+}
+
+/* Inverted slide-header - exact copy of slide-header but with white color for dark backgrounds */
+div#\:\$p > svg > foreignObject > section div.slide-header-inverted,
+div#\:\$p > svg > foreignObject > section .slide-header-inverted,
+section div.slide-header-inverted,
+section .slide-header-inverted,
+div.slide-header-inverted,
+.slide-header-inverted {
+  position: fixed !important;
+  top: 2rem !important;
+  left: 2rem !important;
+  z-index: 9999 !important;
+  color: var(--brand-white) !important;
+  font-weight: 700 !important;
+  font-size: 3rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.25),
+    0 0 8px rgba(255, 255, 255, 0.15),
+    0 0 16px rgba(255, 255, 255, 0.1),
+    0 0 24px rgba(255, 255, 255, 0.06),
+    0 0 40px rgba(255, 255, 255, 0.03);
+  filter: 
+    drop-shadow(0 0 3px rgba(255, 255, 255, 0.15));
+  line-height: 1.2 !important;
+  height: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  transform: none !important;
+  font-family: var(--font-sans) !important;
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box !important;
+  float: none !important;
+  clear: none !important;
+}
+
 h1 { font-size: 3rem; }
 h2 { font-size: 2.25rem; }
 h3 { font-size: 1.875rem; }

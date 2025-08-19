@@ -1,0 +1,104 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; fill: #001932; }
+      .box { fill: #256FEA; stroke: #001932; stroke-width: 2; rx: 8; }
+      .text { font-family: Arial, sans-serif; font-size: 12px; fill: white; text-anchor: middle; font-weight: 500; }
+      .label { font-family: Arial, sans-serif; font-size: 10px; fill: #666; text-anchor: middle; font-weight: 400; }
+      .arrow { stroke: #001932; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .external-box { fill: #4CAF50; stroke: #001932; stroke-width: 2; rx: 8; }
+      .system-box { fill: #FF9800; stroke: #001932; stroke-width: 2; rx: 8; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#001932" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="title">Component to System Deployment Flow</text>
+  
+  <!-- GitHub Code -->
+  <rect x="50" y="80" width="120" height="60" class="box"/>
+  <text x="110" y="105" class="text">GitHub</text>
+  <text x="110" y="120" class="text">Code Repository</text>
+  
+  <!-- App Build -->
+  <rect x="220" y="80" width="120" height="60" class="box"/>
+  <text x="280" y="105" class="text">Build Process</text>
+  <text x="280" y="120" class="text">(CI/CD)</text>
+  
+  <!-- GHCR App Image -->
+  <rect x="390" y="80" width="120" height="60" class="box"/>
+  <text x="450" y="100" class="text">GHCR</text>
+  <text x="450" y="115" class="text">Docker Image</text>
+  <text x="450" y="130" class="text">(Component)</text>
+  
+  <!-- Helm Chart Update -->
+  <rect x="560" y="80" width="120" height="60" class="box"/>
+  <text x="620" y="100" class="text">Component</text>
+  <text x="620" y="115" class="text">Helm Chart</text>
+  <text x="620" y="130" class="text">Published</text>
+  
+  <!-- GHCR Helm Chart -->
+  <rect x="560" y="200" width="120" height="60" class="box"/>
+  <text x="620" y="220" class="text">GHCR</text>
+  <text x="620" y="235" class="text">Chart Repository</text>
+  
+  <!-- System Repository -->
+  <rect x="50" y="320" width="140" height="80" class="system-box"/>
+  <text x="120" y="340" class="text">System Repository</text>
+  <text x="120" y="355" class="text">Umbrella Chart</text>
+  <text x="120" y="370" class="text">(Microservice/Client/</text>
+  <text x="120" y="385" class="text">Platform)</text>
+  
+  <!-- Our Charts -->
+  <rect x="250" y="280" width="120" height="60" class="box"/>
+  <text x="310" y="305" class="text">Internal</text>
+  <text x="310" y="320" class="text">Components</text>
+  
+  <!-- External Charts -->
+  <rect x="250" y="380" width="120" height="60" class="external-box"/>
+  <text x="310" y="405" class="text">External Charts</text>
+  <text x="310" y="420" class="text">(Open Source)</text>
+  
+  <!-- Final System -->
+  <rect x="450" y="320" width="140" height="80" class="system-box"/>
+  <text x="520" y="345" class="text">Deployed System</text>
+  <text x="520" y="360" class="text">Review → Staging →</text>
+  <text x="520" y="380" class="text">Production</text>
+  
+  <!-- Arrows -->
+  <!-- Code to Build -->
+  <line x1="170" y1="110" x2="220" y2="110" class="arrow"/>
+  
+  <!-- Build to GHCR Image -->
+  <line x1="340" y1="110" x2="390" y2="110" class="arrow"/>
+  
+  <!-- Image triggers Helm Chart -->
+  <line x1="510" y1="110" x2="560" y2="110" class="arrow"/>
+  
+  <!-- Helm Chart to GHCR -->
+  <line x1="620" y1="140" x2="620" y2="200" class="arrow"/>
+  
+  <!-- GHCR Chart to System (smooth curve) -->
+  <path d="M 560 230 Q 450 250 350 280 Q 250 310 190 340" class="arrow"/>
+  
+  <!-- Internal Charts to System -->
+  <line x1="250" y1="310" x2="190" y2="340" class="arrow"/>
+  
+  <!-- External Charts to System -->
+  <line x1="250" y1="410" x2="190" y2="380" class="arrow"/>
+  
+  <!-- System to Deployment -->
+  <line x1="190" y1="360" x2="450" y2="360" class="arrow"/>
+  
+  <!-- Labels -->
+  <text x="195" y="105" class="label">push</text>
+  <text x="365" y="105" class="label">builds</text>
+  <text x="535" y="105" class="label">triggers</text>
+  <text x="635" y="175" class="label">publishes</text>
+  <text x="420" y="270" class="label">references</text>
+  <text x="220" y="300" class="label">includes</text>
+  <text x="220" y="425" class="label">includes</text>
+  <text x="320" y="375" class="label">deploys</text>
+</svg>
