@@ -7,7 +7,7 @@ style: |
 
 <!-- _class: lead -->
 
-# 🎯 Promotion Prerequisites
+# 🎯 Components, Systems and Promotions
 
 > Packaging is **more than containerizing apps** —  
 > it’s about **reusable components**,  
