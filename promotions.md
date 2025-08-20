@@ -26,7 +26,7 @@ style: |
 > - 📋 **Helm Chart** → Default deployment definition for 
 a component  
 
-<hr />
+<hr class="slide-divider" />
 
 > - 🏗️ **System** → Umbrella chart combining multiple components into one cohesive unit  
 > - 🚀 **Delivery** → We promote systems (not individual components) through review → staging → production
@@ -65,14 +65,23 @@ a component
 ---
 
 
-<div class="slide-header">⚡ Helm Application Structure</div>
 
+<div class="slide-header">⚡ Helm Application Structure</div>
 <div class="content-area">
 
-<img src="diagrams/helm_structure_decoupled.png" alt="Helm Deployment Flow" style="width: 80%; height: auto; max-height: 60%; object-fit: contain; margin: 5px auto; display: block;">
-
-**Application Structure:**  
-How components are organized within Helm charts and umbrella systems  
+<div style="display: flex; align-items: flex-start; gap: 2rem;">
+  <div style="flex: 1;">
+    <img src="diagrams/helm_structure_decoupled.png" alt="Helm Application Structure" style="width: 100%; height: auto; max-height: 400px; object-fit: contain;">
+  </div>
+  <div style="flex: 1;">
+    <h3 style="margin-top: 0;">Key Components:</h3>
+    <ul>
+      <li>Applications is versioned with semantic convention as is</li>
+      <li>Helm is updated by default with a patch version</li>
+      <li>Changes to the chart is handled with semantic convention</li>
+    </ul>
+  </div>
+</div>
 
 </div>
 
@@ -91,10 +100,9 @@ The full pipeline — from GitHub → build → packaging → system deployment
 
 ---
 
-<div class="slide-header">❓ Questions</div>
-
-<div class="content-area">
-
-💬 *How does this shape our deployment strategy?*  
-
+<!-- _class: invert -->
+<div class="slide-header-light">
+# ❓ Questions?
 </div>
+
+💬 *Let’s discuss!*  

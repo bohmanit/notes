@@ -650,10 +650,10 @@ section:has([data-marpit-background-image]) .marpit-background-image {
   padding-top: 60px;
 }
 
-/* Subtle horizontal rules matching logo border aesthetic */
-hr {
+/* Subtle slide divider class matching logo border aesthetic */
+.slide-divider {
   border: none;
-  height: 1px;
+  height: 0.5px;
   background: linear-gradient(
     to right,
     transparent 0%,
@@ -672,7 +672,7 @@ hr {
 }
 
 /* Add a subtle blue glow effect */
-hr::after {
+.slide-divider::after {
   content: "";
   position: absolute;
   top: -1px;

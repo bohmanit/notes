@@ -165,9 +165,10 @@ Vision:
 </div>  
 
 ---
+
 <!-- _class: invert -->
-<div class="slide-header">
+<div class="slide-header-light">
 # ❓ Questions?
 </div>
 
-Let’s discuss!
+💬 *Let’s discuss!*  
