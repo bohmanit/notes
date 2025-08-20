@@ -3,81 +3,98 @@ marp: true
 paginate: true
 style: |
   @import 'themes/svenskaspel_techy.css';
-
 ---
 
 <!-- _class: lead -->
 
-# 🎯 Promotion prerequisits 
+# 🎯 Promotion Prerequisites
 
-*Understanding how we package components and systems*
+> Packaging is **more than containerizing apps** —  
+> it’s about **reusable components**,  
+> **system orchestration with umbrella charts**, and  
+> **seamless deployment pipelines**.
 
-**Key Topics:**
-- Building and Packaging components
-- Creating system(s) from components
-- Best practices for component deployment and management
-
-*Technical foundation for our deployment architecture*
+*The technical foundation of our deployment architecture*
 
 ---
 
-<div class="slide-header">🚀 Component vs System</div>
+<div class="slide-header">🚀 Component vs. System</div>
 
 <div class="content-area">
 
-- 📦 **Component** → application in a Docker image published to a Docker registry + Helm chart that describes how the application should be run by default
-- 🏗️ **System** → umbrella chart containing dependent charts that work together as a cohesive unit
-- 🚀 **Delivery** → systems are the entities that we deliver through review, staging and production environments
+> - 📦 **Component** → Application packaged as a Docker image in a registry  
+> - 📋 **Helm Chart** → Default deployment definition for 
+a component  
+
+<hr />
+
+> - 🏗️ **System** → Umbrella chart combining multiple components into one cohesive unit  
+> - 🚀 **Delivery** → We promote systems (not individual components) through review → staging → production
 
 </div>
 
 ---
 
-<div class="slide-header">🔄 Packaging Components</div>
+<div class="slide-header">📦 Packaging Components</div>
 
 <div class="content-area">
 
-- 📦 **Docker Image** → Components are packaged as Docker images containing the application code and runtime dependencies
-- 📋 **Helm Chart** → How the component should be run by default is packaged as a Helm chart for the specific application
-- 🏷️ **Registry Storage** → Both Docker images and Helm charts are published to registries (GHCR) for distribution
-- 🔧 **Default Configuration** → Helm charts include default values, resource limits, and deployment configurations
+- 🐳 **Docker Image** → Bundles application code + runtime dependencies  
+- 📋 **Helm Chart** → Defines how the component is deployed by default  
+- 🏷️ **Registry** → Images and charts are published to GHCR for distribution  
+- ⚙️ **Default Config** → Includes sensible defaults for resources, limits, and deployment settings  
 
 </div>
 
 ---
 
-<div class="slide-header">🔄 Packaging Systems</div>
+<div class="slide-header">🏗️ Packaging Systems</div>
 
 <div class="content-area">
 
-- 🏗️ **Umbrella Chart** → Systems are packaged using an umbrella chart that orchestrates multiple components
-- 🎯 **System Archetypes** → Different patterns based on purpose:
-  - **Microservice** → Business logic service with APIs and databases
-  - **Client** → Frontend applications with web servers and assets
-  - **Platform** → Shared infrastructure like monitoring or authentication
-- 📦 **Component Dependencies** → References both internal components and external charts from the internet
-- 🔄 **Environment Promotion** → Complete systems move through review → staging → production
+- 🛠️ **Umbrella Chart** → Orchestrates multiple components into one system  
+- 🎯 **Example System Archetypes**:
+  - **Microservice** → API + business logic + database  
+  - **Client** → Frontend apps with assets + web servers  
+  - **Managed Service** → Shared infra like monitoring or authentication  
+- 🔗 **Dependencies** → Includes internal charts + external charts  for components
+- 🔄 **Promotion** → Entire systems move through environments: review → staging → production  
 
 </div>
 
 ---
 
-<div class="slide-header">🔄 Helm Deployment Flow</div>
+
+<div class="slide-header">⚡ Helm Application Structure</div>
 
 <div class="content-area">
 
-![Helm Deployment Flow](diagrams/helm_deployment_flow.svg)
+<img src="diagrams/helm_structure_decoupled.png" alt="Helm Deployment Flow" style="width: 80%; height: auto; max-height: 60%; object-fit: contain; margin: 5px auto; display: block;">
 
-**From Code to Production:** Complete pipeline showing how applications flow from GitHub through build, packaging, and system deployment
+**Application Structure:**  
+How components are organized within Helm charts and umbrella systems  
 
 </div>
 
 ---
 
-<div class="slide-header">❓ Questions?</div>
+<div class="slide-header">⚡ Helm Deployment Flow</div>
 
 <div class="content-area">
 
-*Let's discuss how this impacts our deployment strategy!*
+<img src="diagrams/helm_deployment_flow.png" alt="Helm Deployment Flow" style="width: 80%; height: auto; max-height: 60%; object-fit: contain; margin: 5px auto; display: block;">
+
+**From Code to Production:**  
+The full pipeline — from GitHub → build → packaging → system deployment  
+
+</div>
+
+---
+
+<div class="slide-header">❓ Questions</div>
+
+<div class="content-area">
+
+💬 *How does this shape our deployment strategy?*  
 
 </div>

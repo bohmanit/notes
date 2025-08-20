@@ -159,6 +159,12 @@ section > * {
   margin-left: var(--spacing-8);
   margin-right: var(--spacing-8);
   margin-bottom: var(--spacing-8);
+  height: calc(100vh - 60px - var(--spacing-8) - var(--spacing-6) - var(--spacing-8) - var(--spacing-8));
+  max-height: calc(720px - 60px - var(--spacing-8) - var(--spacing-6) - var(--spacing-8) - var(--spacing-8));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 /* Consistent spacing for slides without content-area wrapper */
@@ -642,4 +648,43 @@ section[data-marpit-advanced-background="background"] {
 /* Alternative approach for bg left images */
 section:has([data-marpit-background-image]) .marpit-background-image {
   padding-top: 60px;
+}
+
+/* Subtle horizontal rules matching logo border aesthetic */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(37, 111, 234, 0.2) 25%,
+    rgba(37, 111, 234, 0.4) 50%,
+    rgba(37, 111, 234, 0.2) 75%,
+    transparent 100%
+  );
+  margin: var(--spacing-6) auto;
+  width: 60%;
+  opacity: 0.7;
+  position: relative;
+  box-shadow: 
+    0 0 8px rgba(37, 111, 234, 0.15),
+    0 0 4px rgba(37, 111, 234, 0.2);
+}
+
+/* Add a subtle blue glow effect */
+hr::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 25%;
+  right: 25%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(37, 111, 234, 0.6) 50%,
+    transparent 100%
+  );
+  opacity: 0.5;
+  filter: blur(0.5px);
 }
