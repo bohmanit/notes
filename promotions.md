@@ -57,6 +57,7 @@ a component
   - **Microservice** → API + business logic + database  
   - **Client** → Frontend apps with assets + web servers  
   - **Managed Service** → Shared infra like monitoring or authentication  
+  - **Partner Integration** → API specs and documentation
 - 🔗 **Dependencies** → Includes internal charts + external charts  for components
 - 🔄 **Promotion** → Entire systems move through environments: review → staging → production  
 
