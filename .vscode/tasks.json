@@ -19,6 +19,56 @@
 			"type": "shell",
 			"command": "npx @marp-team/marp-cli promotions.md --html --output promotions.html && open -a 'Google Chrome' promotions.html",
 			"group": "build"
+		},
+		{
+			"label": "Open Slide Deck in Browser",
+			"type": "shell",
+			"command": "open",
+			"args": [
+				"-a",
+				"Google Chrome",
+				"${fileDirname}/${fileBasenameNoExtension}.html"
+			],
+			"group": "build",
+			"presentation": {
+				"echo": true,
+				"reveal": "silent",
+				"focus": false,
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "Open Promotions in Browser", 
+			"type": "shell",
+			"command": "open",
+			"args": [
+				"-a",
+				"Google Chrome", 
+				"${workspaceFolder}/promotions.html"
+			],
+			"group": "build"
+		},
+		{
+			"label": "Open DevEx in Browser",
+			"type": "shell", 
+			"command": "open",
+			"args": [
+				"-a",
+				"Google Chrome",
+				"${workspaceFolder}/devex.html" 
+			],
+			"group": "build"
+		},
+		{
+			"label": "Open CICD in Browser",
+			"type": "shell",
+			"command": "open", 
+			"args": [
+				"-a",
+				"Google Chrome",
+				"${workspaceFolder}/cicd.html"
+			],
+			"group": "build"
 		}
 	]
 }

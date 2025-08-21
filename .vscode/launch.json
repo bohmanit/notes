@@ -1,0 +1,61 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch Active Slide Deck",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/@marp-team/marp-cli/bin/marp.js",
+      "args": [
+        "${file}",
+        "--html",
+        "--output",
+        "${fileDirname}/${fileBasenameNoExtension}.html"
+      ],
+      "console": "integratedTerminal",
+      "postDebugTask": "Open Slide Deck in Browser"
+    },
+    {
+      "name": "Launch Promotions Presentation",
+      "type": "node", 
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/@marp-team/marp-cli/bin/marp.js",
+      "args": [
+        "${workspaceFolder}/promotions.md",
+        "--html", 
+        "--output",
+        "${workspaceFolder}/promotions.html"
+      ],
+      "console": "integratedTerminal",
+      "postDebugTask": "Open Promotions in Browser"
+    },
+    {
+      "name": "Launch DevEx Presentation",
+      "type": "node",
+      "request": "launch", 
+      "program": "${workspaceFolder}/node_modules/@marp-team/marp-cli/bin/marp.js",
+      "args": [
+        "${workspaceFolder}/devex.md",
+        "--html",
+        "--output", 
+        "${workspaceFolder}/devex.html"
+      ],
+      "console": "integratedTerminal",
+      "postDebugTask": "Open DevEx in Browser"
+    },
+    {
+      "name": "Launch CI/CD Presentation",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/@marp-team/marp-cli/bin/marp.js", 
+      "args": [
+        "${workspaceFolder}/cicd.md",
+        "--html",
+        "--output",
+        "${workspaceFolder}/cicd.html"
+      ],
+      "console": "integratedTerminal",
+      "postDebugTask": "Open CICD in Browser"
+    }
+  ]
+}
