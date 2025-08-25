@@ -29,7 +29,7 @@ Vision:
 
 - 🧠 **Reduce cognitive load** → maximize developer productivity  
 - ⚡ **Enable intuitive, automated, self-service capabilities**  
-- 😀 **Let developers focus on code, not infrastructure** 
+- 😀 **Let developers focus on code, not infrastructure or platforms** 
 
 </div>
 
